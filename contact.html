@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="uz">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AX T-SHIRTS — Aloqa, JSON Sign Up va Log In</title>
+    <meta
+      name="description"
+      content="AX T-SHIRTS JSON asosidagi ro'yxatdan o'tish (Sign Up), tizimga kirish (Log In), foydalanuvchi profili va aloqa sahifasi."
+    />
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <div id="preloader" class="tshirt-preloader">
+      <div class="curtain-left"></div>
+      <div class="curtain-right"></div>
+      <div class="preloader-center">
+        <svg class="preloader-shirt-svg" viewBox="0 0 120 110">
+          <path
+            class="preloader-shirt-path"
+            d="M32,12 L46,6 C53,16 67,16 74,6 L88,12 L112,34 L98,52 L84,42 L84,102 L36,102 L36,42 L22,52 L8,34 Z"
+          />
+        </svg>
+        <div class="preloader-brand">AX T-SHIRTS</div>
+        <div class="preloader-sub">JSON AUTH & CLIENT PORTAL</div>
+        <div class="preloader-bar"><span></span></div>
+      </div>
+    </div>
+
+    <div class="top-strip">
+      <div class="edge-wrap top-strip-inner">
+        <span
+          >AX T-SHIRTS · JSON FOYDALANUVCHI TIZIMI VA RASMIY ALOQA MARKAZI</span
+        >
+        <span
+          >TOSHKENT SH., AMIR TEMUR SHOH KO‘CHASI 108 · +998 90 123 45 67</span
+        >
+      </div>
+    </div>
+
+    <header class="site-header">
+      <div class="edge-wrap nav-contract">
+        <a href="/index.html" class="brand-mark">AX <em>T-SHIRTS</em></a>
+        <nav class="nav-links">
+          <a href="/index.html#katalog">Katalog</a>
+          <a href="/index.html#sifat">280 GSM Sifat</a>
+          <a href="/index.html#lookbook">Lookbook</a>
+          <a href="/index.html#olchamlar">O‘lchamlar</a>
+          <a href="/contact.html" class="active">Aloqa va Kirish</a>
+        </nav>
+        <button type="button" class="primary-cta open-cart">
+          Savatcha (<span class="cart-count">0</span>)
+        </button>
+      </div>
+    </header>
+
+    <main class="edge-wrap">
+      <section class="section-block">
+        <div class="section-head reveal-item">
+          <div>
+            <h1 class="section-title">
+              JSON ORQALI SIGN UP / LOG IN VA ALOQA MARKAZI
+            </h1>
+            <p class="section-sub">
+              users.json ma’lumotlar fayli orqali shaxsiy hisobingizga kiring,
+              yangi profil oching yoki xabar qoldiring
+            </p>
+          </div>
+          <a href="/index.html" class="primary-cta">← Katalogga qaytish</a>
+        </div>
+
+        <div class="contact-layout">
+          <div class="auth-card reveal-item">
+            <div class="tab-switch">
+              <button type="button" class="tab-btn active" data-mode="login">
+                Log In (Kirish)
+              </button>
+              <button type="button" class="tab-btn" data-mode="signup">
+                Sign Up (Ro‘yxatdan o‘tish)
+              </button>
+            </div>
+
+            <form id="authForm" class="form-grid" data-mode="login">
+              <div id="signupFields" class="form-grid hidden-card">
+                <div class="field-group">
+                  <label>To‘liq ismingiz</label>
+                  <input
+                    type="text"
+                    name="name"
+                    placeholder="Masalan: Azizbek Karimov"
+                  />
+                </div>
+                <div class="field-group">
+                  <label>Telefon raqamingiz</label>
+                  <input
+                    type="text"
+                    name="phone"
+                    placeholder="+998 90 123 45 67"
+                  />
+                </div>
+              </div>
+
+              <div class="field-group">
+                <label>Email manzilingiz (JSON foydalanuvchi)</label>
+                <input
+                  type="email"
+                  name="email"
+                  required
+                  placeholder="abdulaziz@axtshirts.uz"
+                />
+              </div>
+
+              <div class="field-group">
+                <label>Parol</label>
+                <input
+                  type="password"
+                  name="password"
+                  required
+                  placeholder="Parolni kiriting (masalan: ax2026)"
+                />
+              </div>
+
+              <button type="submit" class="btn-accent" style="width: 100%">
+                Tasdiqlash va Davom etish
+              </button>
+            </form>
+
+            <div id="authMsg" class="status-banner"></div>
+
+            <div id="profileBox" class="profile-panel"></div>
+
+            <div class="demo-accounts">
+              <strong style="display: block; font-size: 0.8rem"
+                >users.json dagi tayyor hisoblar (1-bosishda kirish):</strong
+              >
+              <button
+                type="button"
+                class="demo-btn"
+                data-email="abdulaziz@axtshirts.uz"
+              >
+                Abdulaziz (VIP)
+              </button>
+              <button
+                type="button"
+                class="demo-btn"
+                data-email="sardor@axtshirts.uz"
+              >
+                Sardorbek (PRO)
+              </button>
+              <button
+                type="button"
+                class="demo-btn"
+                data-email="madina@axtshirts.uz"
+              >
+                Madina (CLUB)
+              </button>
+            </div>
+          </div>
+
+          <div class="contact-card reveal-item">
+            <h2
+              style="
+                font-family: 'Oswald', sans-serif;
+                font-size: 1.55rem;
+                margin-bottom: 14px;
+              "
+            >
+              ALOQA VA MAXSUS FUTBOLKA BUYURTMASI
+            </h2>
+            <form id="contactForm" class="form-grid">
+              <div class="field-group">
+                <label>Ismingiz</label>
+                <input type="text" required placeholder="Ism va familiyangiz" />
+              </div>
+              <div class="field-group">
+                <label>Telefon yoki Telegram</label>
+                <input type="text" required placeholder="+998 90 000 00 00" />
+              </div>
+              <div class="field-group">
+                <label>Murojaat yo‘nalishi</label>
+                <select>
+                  <option>Oversize / Graphic futbolka xaridi</option>
+                  <option>Shaxsiy dizayn (Custom Print) buyurtma qilish</option>
+                  <option>Ulgurji (Optom) hamkorlik</option>
+                </select>
+              </div>
+              <div class="field-group">
+                <label>Xabaringiz va kerakli o‘lcham</label>
+                <textarea
+                  rows="4"
+                  required
+                  placeholder="Model nomi, o‘lcham (S-XXL) va yetkazib berish manzilini yozing..."
+                ></textarea>
+              </div>
+              <button
+                type="submit"
+                class="primary-cta"
+                style="width: 100%; justify-content: center"
+              >
+                Xabarni yuborish
+              </button>
+            </form>
+
+            <div id="contactMsg" class="status-banner">
+              Xabaringiz muvaffaqiyatli qabul qilindi! Menejerimiz 15 daqiqada
+              bog‘lanadi.
+            </div>
+
+            <div
+              style="
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 10px;
+                margin-top: 16px;
+              "
+            >
+              <div class="card-img-wrap">
+                <img
+                  class="zoom-img"
+                  src="onyx.jpg"
+                  alt="AX Showroom Black Onyx"
+                  referrerpolicy="no-referrer"
+                />
+              </div>
+              <div class="card-img-wrap">
+                <img
+                  class="zoom-img"
+                  src="kul.jpg"
+                  alt="AX Showroom Silver Studio"
+                  referrerpolicy="no-referrer"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <aside id="cartDrawer" class="cart-drawer">
+      <div>
+        <div
+          style="
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #09090b;
+            padding-bottom: 12px;
+          "
+        >
+          <strong style="font-family: 'Oswald', sans-serif; font-size: 1.35rem"
+            >SAVATCHA (<span class="cart-count">0</span>)</strong
+          >
+          <button id="closeCart" type="button" class="demo-btn">
+            Yopish ✕
+          </button>
+        </div>
+        <div id="cartItems" class="cart-items"></div>
+      </div>
+      <div>
+        <button
+          id="checkoutBtn"
+          type="button"
+          class="btn-accent"
+          style="width: 100%"
+        >
+          Buyurtmani tasdiqlash
+        </button>
+      </div>
+    </aside>
+
+    <div id="lightbox" class="lightbox-modal">
+      <div class="lightbox-box">
+        <img
+          id="lightboxImg"
+          src="/img/hero.jpg"
+          alt="Kattalashtirilgan 4K rasm"
+          referrerpolicy="no-referrer"
+        />
+        <div
+          style="
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 12px;
+          "
+        >
+          <strong id="lightboxCap">AX T-SHIRTS</strong>
+          <button id="closeLightbox" type="button" class="primary-cta">
+            Yopish
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="/script.js"></script>
+  </body>
+</html>
